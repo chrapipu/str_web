@@ -1,0 +1,186 @@
+html {
+  font-family: sans-serif;
+  background-color: #f3e5fa;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  background: rgb(104, 180, 151);
+  height: 100px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  line-height: 100px;
+  margin: 0;
+}
+
+button {
+  margin: 50px auto; /* Центрирование по горизонтали */
+  display: block;
+  font-size: 20px;
+  background-color: #f89b9b;
+  animation: shake_button;
+  animation-duration: 100ms;
+  animation-iteration-count: infinite;
+}
+
+button:hover{
+  animation: none;
+  background-color: #68b497;
+}
+
+@keyframes shake_button{
+  0% { transform: translateX(0) }
+  50% { transform: translateX(4px) }
+  100% { transform: translateX(0) }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  font-size: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+  position: relative;
+}
+
+a:after {
+  display: block;
+  position: absolute;
+  left: 50%;
+  width: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: #68b497;
+  content: "";
+  transform: translate(-50%);
+  transition: width 0.4s ease-out;
+}
+
+.important-link:hover {
+  color: #68b497;
+}
+
+a:hover:after {
+  width: 100%;
+}
+
+.ball {
+  width: 50px;
+  height: 50px;
+  background-color: #68b497;
+  border-radius: 50%;
+  position: absolute; /* Фиксированное положение */
+  bottom: 50%; /* Центрирование по вертикали */
+  left: 50%; /* Центрирование по горизонтали */
+  transform: translate(-50%, 50%); /* Коррекция для центрирования */
+  animation: bounce 3s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, 0) scaleY(1); /* Начальная и конечная позиция, деформация */
+  }
+  9% {
+    transform: translate(-50%, 300px) scaleY(0.7);
+  }
+  18% {
+    transform: translate(-50%, 150px) scaleY(1);
+  }
+  27% {
+    transform: translate(-50%, 300px) scaleY(0.85);
+  }
+  36% {
+    transform: translate(-50%, 225px) scaleY(1);
+  }
+  45% {
+    transform: translate(-50%, 300px) scaleY(0.90);
+  }
+  54% {
+    transform: translate(-50%, 263px) scaleY(1);
+  }
+  63% {
+    transform: translate(-50%, 300px) scaleY(0.95);
+  }
+  72% {
+    transform: translate(-50%, 282px) scaleY(1);
+  }
+  81% {
+    transform: translate(-50%, 300px) scaleY(0.98);
+  }
+}
+
+.container {
+  height: 140px;
+  width: 300px;
+  border-top: 22px solid rgb(31, 31, 31);
+  position:absolute;
+  margin-top: 225px;
+  margin-left: 110px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.bead
+{
+  height: 150px;
+  width: 5px;
+  background-color: rgb(31, 31, 31);
+  position: relative;
+  transform-origin: top;
+}
+
+.bead::after {
+  position: absolute;
+  content: "";
+  height: 50px;
+  width: 50px;
+  background-color: rgb(70, 70, 70);
+  border-radius: 50%;
+  left: -23px;
+  bottom: -50px;
+}
+
+.bead:first-child {
+  animation: swing1 1.2s infinite linear;
+}
+
+.bead:last-child {
+  animation: swing2 1.2s 0.6s infinite linear;
+}
+
+@keyframes swing1 {
+  25% {
+    transform: rotate(50deg);
+  }
+  50% {
+    transform:rotate(0deg) ;
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes swing2 {
+  25% {
+    transform: rotate(-50deg);
+  }
+  50% {
+    transform:rotate(0deg) ;
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

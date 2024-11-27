@@ -1,0 +1,64 @@
+body {
+    background-color: #FAEBD7;
+}
+.container {
+    width: 1440px;
+    margin: auto;
+}
+.font{
+    font-size: 20px;
+}
+@font-face {
+    font-family: 'Harry';
+    src: url('fonts/Harry Potter.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Winds';
+    src: url('fonts/ofont.ru_Waterway.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Paddington';
+    src: url('fonts/Paddington.ttf') format('truetype');
+}
+
+.harry-font {
+    font-family: 'Harry', sans-serif;
+}
+
+.winds-font {
+    font-family: 'Winds', sans-serif;
+}
+
+.paddington-font {
+    font-family: 'Paddington', sans-serif;
+}
+
+ul.movies {
+    list-style: none;
+    padding: 0;
+}
+
+ul.movies li a {
+    text-decoration: none;
+    color: black;
+}
+
+.center {
+    text-align: center;
+}
+
+.justify{
+    text-align: justify; /* Выровнять по ширине */
+}
+
+.left {
+    text-align: left;
+}
+
+ img {
+     width: 10cm;
+     height: 6cm;
+     border-radius: 25px;
+ }
